@@ -1,0 +1,21 @@
+1 gestionar los pipes y los forks en el programa y el flujo de datos --
+2 obtener las rutas para el comando de la variable de entorno
+3 función here_doc
+4 funcion de abrir archivos con los permisos
+5 gestionar los errores y liberar la memoria
+
+flujo here_doc: fork-> padre ejecuta la función para leer el archivo y lo
+dirige al extremo de escritura del pipe
+hijo dirige los datos al extremo de lectura del pipe
+así quedan disponibles para que se lean y luego al llamar al
+pipe 
+
+se abre el output.txt, ejecuta here_doc y el proceso hijo
+lee del stdin y lo dirige al pipe
+
+
+
+entrada here_doc tipo here_doc DELIMITADOR cmd cmd2 output
+
+tener en cuenta que el gnl que hay en la librería no compila
+con el makefile
