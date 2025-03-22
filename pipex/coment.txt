@@ -33,3 +33,5 @@ para obtener la línea de PATH usar una funcion que compare env con PATH hasta q
 y que devuelva donde termina el string "PATH="
 
 ahora como uno dos strings sin el join
+
+abrir los archivos con sus permisos y manejar casos de errores

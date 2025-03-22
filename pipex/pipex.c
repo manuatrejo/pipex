@@ -1,4 +1,47 @@
-// gestión de el here_doc
+void	free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+		free(array[i++]);
+	free(array);
+}
+
+void	write_heredoc(char *limiter, int pipefd)
+{
+	char	*line;
+
+	line = get_next_line(0);
+	while (ft_strncmp(line, limiter, ft_strlen(line)) != 0)
+	{
+		ft_putstr_fd(line, pipefd);
+		free(line);
+		line = get_next_line(0);
+	}
+	free(line);
+}
+
+void	here_doc(char *limiter, char **env)
+{
+	int	pipe_fds[2];
+	pid_t	pid;
+
+	if (pipe(pipe_fds) == -1);
+		perror("Error : ");
+	pid = fork();
+	if (!pid)
+	{
+		close(pipe_fds[0]);
+		write_heredoc(limiter, pipe_fds[1]);
+	}
+	else
+	{
+		close(pipe_fds[1]);
+
+	}
+	
+}
 
 char	*path_in_env(char *path, char **env)
 {
@@ -76,12 +119,5 @@ void	pipes(char **env, char *cmd)
 
 int	main(int argc, char **argv, char **env)
 {
-
-
-	open_files
-	dup2(fd_in, 0);
-	
-	
+		
 }
-// heredoc, número de argumentos < 4, abrir archivos de entrada y salida, hacer pipe y fork
-// y ejecutar las instrucciones 
