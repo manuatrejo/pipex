@@ -1,6 +1,6 @@
 1 gestionar los pipes y los forks en el programa y el flujo de datos --
 2 obtener las rutas para el comando de la variable de entorno
-3 función here_doc
+3 función here_doc 
 4 funcion de abrir archivos con los permisos
 5 gestionar los errores y liberar la memoria
 
@@ -19,3 +19,17 @@ entrada here_doc tipo here_doc DELIMITADOR cmd cmd2 output
 
 tener en cuenta que el gnl que hay en la librería no compila
 con el makefile
+
+para hoy: pensar en si hay formas distintas de hacer lo mismo que el
+ejemplo y 
+
+allpath devuelve las rutas que están separadas por : y split las separa
+path_part toma las rutas separadas y les añade / y añade el primer comando para comprobar
+si el comando pertenece a la ruta en cuestión
+
+las rutas terminadas en / y añadirle el comando 
+
+para obtener la línea de PATH usar una funcion que compare env con PATH hasta que encontrarlo
+y que devuelva donde termina el string "PATH="
+
+ahora como uno dos strings sin el join
